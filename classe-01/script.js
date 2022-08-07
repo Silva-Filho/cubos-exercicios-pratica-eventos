@@ -57,14 +57,21 @@ imagemWrapper.forEach(item => {
 });
 
 // Fechar o modal:
-const sairModal = () => modal.style.display = "none";
+/* const sairModal = () => modal.style.display = "none"; */
+const sairModal = event => {
+    if (event.target !== modal?.firstElementChild) {
+        return;
+    }
+
+    modal.style.display = "none";
+};
 
 modal?.addEventListener("click", sairModal);
 
 // Fechar o modal ao clicar fora da imagem:
-const manterModalAberto = (event) => event.stopPropagation();
+/* const manterModalAberto = (event) => event.stopPropagation();
 
-imagemModal?.addEventListener("click", manterModalAberto);
+imagemModal?.addEventListener("click", manterModalAberto); */
 
 // Trocar para imagem anterior se houver:
 setaParaEsquerda?.addEventListener("click", event => {
