@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const imgMenu = document.querySelector(".menu");
 const h2 = document.querySelectorAll("h2");
-// const menuInicial = document.querySelector(".inicial");
+const menuInicial = document.querySelector(".inicial");
 const menuCurtidas = document.querySelector(".favoritos");
 const tituloH1 = document.querySelector("h1");
 const imagemWrapper = document.querySelectorAll(".imagem-wrapper");
@@ -118,7 +118,7 @@ imagemModal?.addEventListener("dblclick", () => {
     imagemLikeModal?.classList.toggle("escondido");
 });
 
-// Mostrar apenas as imagens curtidas:
+// Mostrar apenas as imagens curtidas ao clicar em favoritos:
 menuCurtidas?.addEventListener("click", () => {
     tituloH1.textContent = "Favoritos";
 
@@ -126,5 +126,14 @@ menuCurtidas?.addEventListener("click", () => {
         if (!item.classList.contains("curtida")) {
             item.classList.add("escondido");
         }
+    });
+});
+
+// Mostrar todas as imagens ao clicar no menu inicial:
+menuInicial?.addEventListener("click", () => {
+    tituloH1.textContent = "Início";
+
+    imagemWrapper.forEach(item => {
+        item.classList.remove("escondido");
     });
 });
