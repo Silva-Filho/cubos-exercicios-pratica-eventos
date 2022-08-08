@@ -107,6 +107,13 @@ main h1 {
 
 .imagem-wrapper {
     margin: 0 30px 40px 0;
+    position: relative;
+}
+
+.imagem-wrapper img:first-of-type {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
 .imagem-info {
@@ -149,6 +156,8 @@ main h1 {
 }
 
 .btn-fechar {
+    width: 80px;
+    height: 80px;
     position: fixed;
     top: 10px;
     right: 10px;
@@ -161,6 +170,16 @@ main h1 {
     flex-direction: row;
 }
 
-.imagem-wrapper-modal .imagem-modal {
+/* .imagem-wrapper-modal .imagem-modal {
     margin: 0 100px 0;
+} */
+.imagem-wrapper-modal div {
+    margin: 0 100px 0;
+    position: relative;
+}
+
+.imagem-wrapper-modal div .imagem-gostei-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
