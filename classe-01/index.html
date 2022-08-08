@@ -1,165 +1,194 @@
 <!DOCTYPE html>
-<html lang = "pt-br">
-    <head>
-        <link rel = "preconnect" href = "https://fonts.googleapis.com" />
-        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin />
-        
+<html lang="pt-br">
 
-        <meta charset = "UTF-8" />
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <title>Exercicio 01 da aula 11 de Front-end.</title>
 
-        <link rel = "stylesheet" href = "style.css" />
-        <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel = "stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <script src = "script.js" defer ></script>
-    </head>
+    <title>Exercicio 01 da aula 11 de Front-end.</title>
 
-    <body>
-        <header> 
-            <nav>
-                <button class = "menu-opcoes">
-                    <img class = "menu" src = "assets/closed-menu.svg" alt = "" />
-                </button>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
-                <button class = "menu-opcoes">
-                    <img class = "menu" src = "assets/active-home.svg" alt = "" />
+    <script src="script.js" defer></script>
+</head>
 
-                    <h2 class = "inicio escondido">Início</h2>
-                </button>
-
-                <button class = "menu-opcoes">
-                    <img class = "menu" src = "assets/inactive-like.svg" alt = "" />
-
-                    <h2 class = "escondido">Favoritos</h2>
-                </button>
-            </nav>
-
-            <button class = "menu-opcoes">
-                <img src = "assets/inactive-settings.svg" alt = "" />
-
-                <h2 class = "escondido">Configurações</h2>
+<body>
+    <header>
+        <nav>
+            <button class="menu-opcoes">
+                <img class="menu" src="assets/closed-menu.svg" alt="" />
             </button>
-        </header>
 
-        <main>
-            <h1>Início</h1>
+            <button class="menu-opcoes">
+                <img class="menu" src="assets/active-home.svg" alt="" />
 
-            <div class="container">
-                <div class = "imagem-wrapper">
-                    <img data-id="0" src = "assets/gallery/image 1.png" alt = "" />
+                <h2 class="inicio escondido">Início</h2>
+            </button>
 
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
+            <button class="menu-opcoes">
+                <img class="menu" src="assets/inactive-like.svg" alt="" />
 
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-                
-                <div class = "imagem-wrapper">
-                    <img data-id="1" src = "assets/gallery/image 2.png" alt = "" />
+                <h2 class="escondido">Favoritos</h2>
+            </button>
+        </nav>
 
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
+        <button class="menu-opcoes">
+            <img src="assets/inactive-settings.svg" alt="" />
 
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
+            <h2 class="escondido">Configurações</h2>
+        </button>
+    </header>
 
-                <div class = "imagem-wrapper">
-                    <img data-id="2" src = "assets/gallery/image 3.png" alt = "" />
+    <main>
+        <h1>Início</h1>
 
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
+        <div class="container">
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
 
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
+                <img data-id="0" class="image-content" src="assets/gallery/image 1.png" alt="" />
 
-                <div class = "imagem-wrapper">
-                    <img data-id="3" src = "assets/gallery/image 4.png" alt = "" />
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
 
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-
-                <div class = "imagem-wrapper">
-                    <img data-id="4" src = "assets/gallery/image 5.png" alt = "" />
-
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-
-                <div class = "imagem-wrapper">
-                    <img data-id="5" src = "assets/gallery/image 6.png" alt = "" />
-
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-
-                <div class = "imagem-wrapper">
-                    <img data-id="6" src = "assets/gallery/image 7.png" alt = "" />
-
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-
-                <div class = "imagem-wrapper">
-                    <img data-id="7" src = "assets/gallery/image 8.png" alt = "" />
-
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-
-                <div class = "imagem-wrapper">
-                    <img data-id="8" src = "assets/gallery/image 9.png" alt = "" />
-
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
-                </div>
-
-                <div class = "imagem-wrapper">
-                    <img data-id="9" src = "assets/gallery/image 10.png" alt = "" />
-
-                    <div class = "imagem-info">
-                        <span>Lorem ipsum</span>
-
-                        <span>há 1 mês</span>
-                    </div>
+                    <span>há 1 mês</span>
                 </div>
             </div>
 
-            <div class = "modal escondido">
-                <img class = "btn-fechar" src = "assets/open-menu.svg" alt = "botão fechar" />
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
 
-                <div class = "imagem-wrapper-modal">
-                    <img src = "assets/prev.svg" alt = "seta para esquerda" />
+                <img data-id="1" class="image-content" src="assets/gallery/image 2.png" alt="" />
 
-                    <img class = "imagem-modal" src = "assets/gallery/image 3.png" />
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
 
-                    <img src = "assets/next.svg" alt = "seta para direita" />
+                    <span>há 1 mês</span>
                 </div>
-                
             </div>
-        </main>
-    </body>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="2" class="image-content" src="assets/gallery/image 3.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="3" class="image-content" src="assets/gallery/image 4.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="4" class="image-content" src="assets/gallery/image 5.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="5" class="image-content" src="assets/gallery/image 6.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="6" class="image-content" src="assets/gallery/image 7.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="7" class="image-content" src="assets/gallery/image 8.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="8" class="image-content" src="assets/gallery/image 9.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+
+            <div class="imagem-wrapper">
+                <img class="escondido" src="./assets/like.svg" alt="imagem de coração que simboliza que gostou" />
+
+                <img data-id="9" class="image-content" src="assets/gallery/image 10.png" alt="" />
+
+                <div class="imagem-info">
+                    <span>Lorem ipsum</span>
+
+                    <span>há 1 mês</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal escondido">
+            <img class="btn-fechar" src="./assets/open-menu.svg" alt="botão fechar" />
+
+            <div class="imagem-wrapper-modal">
+                <img class="prev-arrow" src="./assets/prev.svg" alt="seta para esquerda" />
+                <!--  class="escondido" -->
+                <div>
+                    <img class="imagem-gostei-modal  escondido" src="./assets/like.svg"
+                        alt="imagem de coração que simboliza que gostou" />
+
+                    <img class="imagem-modal" />
+                </div>
+
+                <!-- <img class = "imagem-modal" /> -->
+
+                <img class="next-arrow" src="./assets/next.svg" alt="seta para direita" />
+            </div>
+
+        </div>
+    </main>
+</body>
+
 </html>
