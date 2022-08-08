@@ -2,12 +2,16 @@ const imgMenu = document.querySelector(".menu");
 const h2 = document.querySelectorAll("h2");
 const header = document.querySelector("header");
 const imagemWrapper = document.querySelectorAll(".imagem-wrapper");
-/* const imagens = document.querySelectorAll(".imagem-wrapper img"); */
+// const imagens = document.querySelectorAll(".imagem-wrapper img");
 const modal = document.querySelector(".modal");
 const imagemWrapperModal = document.querySelectorAll(".imagem-wrapper-modal img");
 const imagemModal = document.querySelector(".imagem-modal");
-const setaParaEsquerda = document.querySelector(".imagem-wrapper-modal img:first-child");
-const setaParaDireita = document.querySelector(".imagem-wrapper-modal img:last-child");
+const imagemLikeModal = document.querySelector(".imagem-gostei-modal");
+// console.log(imagemLikeModal?.classList);
+// const setaParaEsquerda = document.querySelector(".imagem-wrapper-modal img:first-child");
+const setaParaEsquerda = document.querySelector(".prev-arrow");
+// const setaParaDireita = document.querySelector(".imagem-wrapper-modal img:last-child");
+const setaParaDireita = document.querySelector(".next-arrow");
 
 const imgFecharMenu = "assets/open-menu.svg";
 const imgAbrirMenu = "assets/closed-menu.svg";
@@ -19,9 +23,9 @@ const manipularMenu = () => {
     const menuSrc = imgMenu.getAttribute("src");
     const imgSrc = menuSrc === imgAbrirMenu ? imgFecharMenu : imgAbrirMenu;
 
-    header.classList.toggle("expandir-header");
+    header?.classList.toggle("expandir-header");
     h2.forEach(elemento => elemento.classList.toggle("escondido"));
-    imgMenu.setAttribute("src", imgSrc);
+    imgMenu?.setAttribute("src", imgSrc);
 };
 
 imgMenu?.addEventListener("click", manipularMenu);
@@ -41,11 +45,13 @@ function mostrarSetas() {
 
 // Manipular imagem a ser mostrada no modal:
 imagemWrapper.forEach(item => {
-    const imagem = item.querySelector("img");
+    const imagem = item.querySelector(".image-content");
 
     imagem?.addEventListener("click", event => {
-        console.log({ id: Number(event.target?.dataset.id) });
-        indiceImagem = Number(event.target?.dataset.id)
+        indiceImagem = Number(event.target?.dataset.id);
+
+        const imagemGostei = imagem?.previousElementSibling;
+        imagemGostei?.classList.contains("escondido") && imagemLikeModal?.classList.add("escondido");
 
         const src = event.target?.src;
 
@@ -78,11 +84,11 @@ setaParaEsquerda?.addEventListener("click", event => {
     event.stopPropagation();
     indiceImagem--;
 
-    const imagemAtual = imagemWrapper[indiceImagem].querySelector("img");
+    const imagemAtual = imagemWrapper[indiceImagem].querySelector(".image-content");
     const src = imagemAtual?.getAttribute("src");
 
     imagemModal?.setAttribute("src", src);
-    
+
     mostrarSetas();
 });
 
@@ -91,10 +97,18 @@ setaParaDireita?.addEventListener("click", event => {
     event.stopPropagation();
     indiceImagem++;
 
-    const imagemAtual = imagemWrapper[indiceImagem].querySelector("img");
+    const imagemAtual = imagemWrapper[indiceImagem].querySelector(".image-content");
     const src = imagemAtual?.getAttribute("src");
 
     imagemModal?.setAttribute("src", src);
 
     mostrarSetas();
+});
+
+// Adicionar ou remover classe 'escondido' da imagem gostei:
+imagemModal?.addEventListener("dblclick", () => {
+    const imagemAtual = imagemWrapper[indiceImagem].querySelector("img:first-of-type");
+    imagemAtual?.classList.toggle("escondido");
+
+    imagemLikeModal?.classList.toggle("escondido");
 });
