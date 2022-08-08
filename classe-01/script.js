@@ -1,6 +1,9 @@
+const header = document.querySelector("header");
 const imgMenu = document.querySelector(".menu");
 const h2 = document.querySelectorAll("h2");
-const header = document.querySelector("header");
+// const menuInicial = document.querySelector(".inicial");
+const menuCurtidas = document.querySelector(".favoritos");
+const tituloH1 = document.querySelector("h1");
 const imagemWrapper = document.querySelectorAll(".imagem-wrapper");
 // const imagens = document.querySelectorAll(".imagem-wrapper img");
 const modal = document.querySelector(".modal");
@@ -107,8 +110,21 @@ setaParaDireita?.addEventListener("click", event => {
 
 // Adicionar ou remover classe 'escondido' da imagem gostei:
 imagemModal?.addEventListener("dblclick", () => {
+    imagemWrapper[indiceImagem].classList.toggle("curtida");
+
     const imagemAtual = imagemWrapper[indiceImagem].querySelector("img:first-of-type");
     imagemAtual?.classList.toggle("escondido");
 
     imagemLikeModal?.classList.toggle("escondido");
+});
+
+// Mostrar apenas as imagens curtidas:
+menuCurtidas?.addEventListener("click", () => {
+    tituloH1.textContent = "Favoritos";
+
+    imagemWrapper.forEach(item => {
+        if (!item.classList.contains("curtida")) {
+            item.classList.add("escondido");
+        }
+    });
 });
