@@ -19,7 +19,7 @@ let indiceImagem = 0;
 
 // Manipular aba menu:
 const manipularMenu = () => {
-    const menuSrc = imgMenu.getAttribute("src");
+    const menuSrc = imgMenu?.getAttribute("src");
     const imgSrc = menuSrc === imgAbrirMenu ? imgFecharMenu : imgAbrirMenu;
 
     header?.classList.toggle("expandir-header");
@@ -49,30 +49,33 @@ imagemWrapper.forEach(item => {
     imagem?.addEventListener("click", event => {
         indiceImagem = Number(event.target?.dataset.id);
 
-        !item.classList.contains("curtida") && imagemLikeModal?.classList.add("escondido");
+        // !item.classList.contains("curtida") && imagemLikeModal?.classList.add("escondido");
+        imagemWrapper[indiceImagem].classList.contains("curtida") ?
+            imagemLikeModal?.classList.remove("escondido") :
+            imagemLikeModal?.classList.add("escondido");
 
         const src = event.target?.src;
         imagemModal?.setAttribute("src", src);
 
-        mostrarSetas();        
+        mostrarSetas();
         modal.style.display = "flex";
     });
 });
 
 // Fechar o modal:
-/* const sairModal = () => modal.style.display = "none"; */
-const sairModal = event => {
+const sairModal = () => modal.style.display = "none";
+/* const sairModal = event => {
     if (event.target !== modal?.firstElementChild) {
         return;
     }
 
     modal.style.display = "none";
-};
+}; */
 modal?.addEventListener("click", sairModal);
 
 // Fechar o modal ao clicar fora da imagem:
-/* const manterModalAberto = (event) => event.stopPropagation();
-imagemModal?.addEventListener("click", manterModalAberto); */
+const manterModalAberto = (event) => event.stopPropagation();
+imagemModal?.addEventListener("click", manterModalAberto);
 
 // Trocar para imagem anterior se houver:
 setaParaEsquerda?.addEventListener("click", event => {
