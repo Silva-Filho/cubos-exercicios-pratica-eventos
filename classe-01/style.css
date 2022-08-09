@@ -1,15 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
     box-sizing: border-box;
-    list-style: none;
 }
 
 body {
-    max-width: 1440px;
+    width: 100vw;
     height: 1024px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: #FFF;
     font-family: 'Roboto', sans-serif;
 }
@@ -25,11 +27,13 @@ header {
     padding: 20px;
     position: fixed;
     top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #313131;    
+    background-color: #313131;
+    transition: all 0.15s;    
 }
 
 header nav {
@@ -65,8 +69,6 @@ header button + button {
     z-index: 1;
 }
 
-.expandir-header .menu {}
-
 .expandir-header .menu-opcoes {
     width: 150px;
     display: flex;
@@ -83,19 +85,17 @@ header button + button {
 }
 
 main {
-    margin-left: 6rem;
+    margin: 5rem 0 0 4rem;
+    border: 1px solid blueviolet;
 }
 
 main h1 {
-    margin: 150px 0 50px;
+    margin-bottom: 50px;
     text-align: center;
     font-size: 36px;
     line-height: 42px;
     color: #000000;
 }
-
-/* border: 3px solid blueviolet; */
-/* border: 3px solid red; */
 
 .container {
     display: flex;
@@ -141,17 +141,12 @@ main h1 {
 }
 
 .modal {
-    /* width: 1440px; */
     width: 100%;
     height: 100%;
-    /* height: 1024px; */
-    /* display: none; */
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     position: fixed;
     inset: 0;
-    /* z-index: 1; */
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -170,9 +165,6 @@ main h1 {
     flex-direction: row;
 }
 
-/* .imagem-wrapper-modal .imagem-modal {
-    margin: 0 100px 0;
-} */
 .imagem-wrapper-modal div {
     margin: 0 100px 0;
     position: relative;
@@ -182,4 +174,8 @@ main h1 {
     position: absolute;
     top: 15px;
     right: 15px;
+}
+
+.imagem-wrapper-modal .imagem-modal {
+    width: 600px;
 }
