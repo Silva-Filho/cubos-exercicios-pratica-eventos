@@ -33,7 +33,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #313131;
-    transition: all 0.15s;    
+    transition: all 0.25s;    
 }
 
 header nav {
@@ -67,6 +67,7 @@ header button + button {
     min-width: 200px;
     align-items: flex-start;
     z-index: 1;
+    transition: all 0.25s;
 }
 
 .expandir-header .menu-opcoes {
@@ -86,7 +87,6 @@ header button + button {
 
 main {
     margin: 5rem 0 0 4rem;
-    border: 1px solid blueviolet;
 }
 
 main h1 {
